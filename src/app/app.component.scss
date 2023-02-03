@@ -1,0 +1,11 @@
+.all {
+    display: flex;
+    height: 100%;
+
+    .sisters {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

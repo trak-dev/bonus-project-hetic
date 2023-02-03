@@ -1,0 +1,32 @@
+<h1 (click)="logme()">
+    User data
+</h1>
+
+<div *ngIf="loaded">
+    <h3>{{user.name}}</h3>
+    <h4>{{user.email}}</h4>
+
+    <div>
+        <h4>Posts : </h4> <button (click)="cryptThis()">chiffrer / dechiffrer</button>
+        <ul>
+            <li *ngFor="let post of posts ;index as j">
+                <p style="font-weight: bold;">{{post.title}}</p>
+                <p>{{post.body}}</p>
+                <p>average number of comments : {{commentNumbers[j]}}</p>
+            </li>
+        </ul>
+        <h4>Average comment number : {{average}}</h4>
+        <h4>Tasks ended : {{this.tasksStatus.completed}}, Task todo : {{this.tasksStatus.notCompleted}}</h4>
+        <h4>Distance between users</h4>
+        <ul>
+            <li *ngFor="let distance of distances; index as i" >
+                <p>{{user.name}} is {{distance}}kms away from {{users[i].name}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="loading">
+    <h3>Loading...</h3>
+</div>
+

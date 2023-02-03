@@ -1,0 +1,9 @@
+<h1>
+    Users data
+</h1>
+<select [(ngModel)]="selectedUser" (change)="setCurrentUser()" aria-placeholder="select an user">
+    <option value="0" disabled selected>Select the role</option>
+    <option *ngFor="let user of users" [value]="user.id">
+        {{ user.name }}
+    </option>
+</select>
